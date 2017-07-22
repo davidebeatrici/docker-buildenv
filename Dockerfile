@@ -3,6 +3,9 @@ FROM debian:latest
 # Upgrade packages
 RUN apt update && apt dist-upgrade -y
 
+# Install "apt-utils", to get rid of "debconf: delaying package configuration, since apt-utils is not installed"
+RUN apt install -y apt-utils
+
 # Install "gnupg" package, for MXE's repository key
 RUN apt install -y gnupg
 
