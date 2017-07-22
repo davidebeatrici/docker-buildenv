@@ -17,4 +17,4 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D43A795B73B16ABE964
 RUN apt update
 
 # Install packages
-RUN apt install -y "mxe-x86-64-w64-mingw32.shared*" "mxe-x86-64-w64-mingw32.static*"
+RUN apt install -y -o Dpkg::Options::="--force-overwrite" "mxe-x86-64-w64-mingw32.shared*" "mxe-x86-64-w64-mingw32.static*"
